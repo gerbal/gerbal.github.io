@@ -15,14 +15,10 @@ function betterLoadJS(src, callback) {
 if(!window.$ && !window.OTSLoaded)
 {
    window.OTSLoaded = true;
-   betterLoadJS("http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js", betterLoadJS("/spring2014/js/OTS.js", function(){
-    window.OTSLoaded = true;
-   }) );
+   betterLoadJS("http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js", function(){betterLoadJS("/spring2014/js/OTS.js")});
 } else if (!window.OTSLoaded && window.$){
   window.OTSLoaded = true;
-  betterLoadJS("http://gerbal.github.io/js/OTS.js", function(){
-    window.OTSLoaded = true;
-   })
+  betterLoadJS("http://gerbal.github.io/js/OTS.js", function(){})
 }else{
   console.log("WTF")
 };
